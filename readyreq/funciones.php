@@ -34,8 +34,10 @@ function connect($hostname_localhost,$username_localhost,$password_localhost,$da
   $enlace = mysqli_connect($hostname_localhost, $username_localhost, $password_localhost, $database_localhost,$port_localhost);
   if (!$enlace)
     return "No";
-  else
+  else{
+    mysqli_set_charset($enlace,"utf8");
     return $enlace;
+  }
 }
 
 function writeConf($hostname_localhost,$username_localhost,$password_localhost,$database_localhost,$port_localhost){
