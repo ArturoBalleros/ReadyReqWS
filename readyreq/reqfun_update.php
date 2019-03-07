@@ -7,12 +7,13 @@ $descrip = $_GET['c'];
 $paquet = $_GET['d'];
 $precond = $_GET['e'];
 $postcond = $_GET['f'];
-$prior = $_GET['g'];
-$urgen = $_GET['h'];
-$estab = $_GET['i'];
-$estad = $_GET['j'];
-$categ = $_GET['k'];
-$comen = $_GET['l'];
+$compl = $_GET['g'];
+$prior = $_GET['h'];
+$urgen = $_GET['i'];
+$estab = $_GET['j'];
+$estad = $_GET['k'];
+$categ = $_GET['l'];
+$comen = $_GET['m'];
 $json = array();
 
 if(empty($cod))
@@ -35,7 +36,7 @@ else{
 		else{
 
 			$consulta="update reqfun set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', paquete = " . $paquet . ", precond = '" . $precond . "', 
-			postcond = '" . $postcond . "', prioridad = " . $prior . ", urgencia = " . $urgen . ", estabilidad = " . $estab . ",
+			postcond = '" . $postcond . "', complejidad = " . $compl . ", prioridad = " . $prior . ", urgencia = " . $urgen . ", estabilidad = " . $estab . ",
 			estado = " . $estad . ", categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado=mysqli_query($conexion,$consulta);
 

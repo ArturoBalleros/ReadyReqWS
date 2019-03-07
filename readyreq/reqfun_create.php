@@ -6,12 +6,14 @@ $descrip = $_GET['b'];
 $paquet = $_GET['c'];
 $precond = $_GET['d'];
 $postcond = $_GET['e'];
-$prior = $_GET['f'];
-$urgen = $_GET['g'];
-$estab = $_GET['h'];
-$estad = $_GET['i'];
-$categ = $_GET['j'];
-$comen = $_GET['k'];
+$compl = $_GET['f'];
+$prior = $_GET['g'];
+$urgen = $_GET['h'];
+$estab = $_GET['i'];
+$estad = $_GET['j'];
+$categ = $_GET['k'];
+$comen = $_GET['l'];
+
 
 if(empty($nombre))
 	echo makeError("No1");
@@ -30,9 +32,8 @@ else{
 		if ($conexion == "No") 
 			echo makeError("No3");
 		else{
-			$consulta="insert into reqfun (nombre,descripcion,paquete,precond,postcond,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
-			values ('" . $nombre . "','" . $descrip . "'," . $paquet . ",'" . $precond . "','" . $postcond . "',
-			" . $prior . "," . $urgen . "," . $estab . "," . $estad . "," . $categ . ",'" . $comen . "');";		
+			$consulta="insert into reqfun (nombre,descripcion,paquete,precond,postcond,complejidad,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
+			values ('" . $nombre . "','" . $descrip . "'," . $paquet . ",'" . $precond . "','" . $postcond . "'," . $compl . "," . $prior . "," . $urgen . "," . $estab . "," . $estad . "," . $categ . ",'" . $comen . "');";		
 			$resultado=mysqli_query($conexion,$consulta);
 			if (!$resultado) 
 				echo makeError("No4");
