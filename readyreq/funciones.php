@@ -20,17 +20,20 @@ function decrypt_mac($string)
 }
 
 //Encriptar dentro del propio php
-//http://quicklick.es/encriptar-y-desencriptar-en-php/
+//https://www.lawebdelprogramador.com/codigo/PHP/5128-Encriptar-y-desencriptar-con-openssl.html
 function encrypt($string)
 {
   $key = "readyreqreadyreq";
-  return base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($key), $string, MCRYPT_MODE_CBC, md5(md5($key))));
+  $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
+  $encrypted = openssl_encrypt($string, "aes-256-cbc", $key, 0, $iv);
+  return base64_encode($encrypted."::".$iv);
 }
 
 function decrypt($string)
 {
   $key = "readyreqreadyreq";
-  return rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($key), base64_decode($string), MCRYPT_MODE_CBC, md5(md5($key))), "\0");
+  list($encrypted_data, $iv) = explode('::', base64_decode($string), 2);
+  return openssl_decrypt($encrypted_data, 'aes-256-cbc', $key, 0, $iv);
 }
 
 
