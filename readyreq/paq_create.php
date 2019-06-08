@@ -22,7 +22,7 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into paquetes (nombre,categoria,comentario) values ('" . $nombre . "'," . $categ . ",'" . $comen . "');";
+			$consulta = "insert into Paquetes (nombre,categoria,comentario) values ('" . $nombre . "'," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)
 				echo makeError("No4");

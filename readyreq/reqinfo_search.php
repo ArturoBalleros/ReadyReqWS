@@ -23,7 +23,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "Select * from reqinfo where Id = '" . $param . "';";
+			$consulta = "Select * from ReqInfo where Id = '" . $param . "';";
 			$resultado = mysqli_query($conexion, $consulta);
 
 			if (!$resultado)

@@ -35,7 +35,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "update reqinfo set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', tiemmed = " . $timmed . ", tiemmax = " . $timmax . ", 
+			$consulta = "update ReqInfo set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', tiemmed = " . $timmed . ", tiemmax = " . $timmax . ", 
 			ocumed = " . $ocumed . ", ocumax = " . $ocumax . ", prioridad = " . $prior . ", urgencia = " . $urgen . ", estabilidad = " . $estab . ",
 			estado = " . $estad . ", categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);

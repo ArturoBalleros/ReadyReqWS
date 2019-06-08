@@ -35,7 +35,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "update reqfun set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', paquete = " . $paquet . ", precond = '" . $precond . "', 
+			$consulta = "update ReqFun set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', paquete = " . $paquet . ", precond = '" . $precond . "', 
 			postcond = '" . $postcond . "', complejidad = " . $compl . ", prioridad = " . $prior . ", urgencia = " . $urgen . ", estabilidad = " . $estab . ",
 			estado = " . $estad . ", categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);

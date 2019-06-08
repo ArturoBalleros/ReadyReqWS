@@ -32,7 +32,7 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into reqfun (nombre,descripcion,paquete,precond,postcond,complejidad,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
+			$consulta = "insert into ReqFun (nombre,descripcion,paquete,precond,postcond,complejidad,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
 			values ('" . $nombre . "','" . $descrip . "'," . $paquet . ",'" . $precond . "','" . $postcond . "'," . $compl . "," . $prior . "," . $urgen . "," . $estab . "," . $estad . "," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)

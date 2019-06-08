@@ -23,7 +23,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "Select Id from actores where Nombre = '" . $param . "' Order By id Desc;";
+			$consulta = "Select Id from Actores where Nombre = '" . $param . "' Order By id Desc;";
 			$resultado = mysqli_query($conexion, $consulta);
 
 			if (!$resultado)

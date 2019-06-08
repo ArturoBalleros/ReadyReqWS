@@ -71,7 +71,7 @@ else {
 												if (!$resultado)
 													echo makeError("No4");
 												else {
-													$consulta = "delete from grupo where Id = " . $cod . ";";
+													$consulta = "delete from Grupo where Id = " . $cod . ";";
 													$resultado = mysqli_query($conexion, $consulta);
 													if (!$resultado)
 														echo makeError("No4");

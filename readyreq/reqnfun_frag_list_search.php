@@ -23,7 +23,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "Select Id,Nombre from reqnfunc where Nombre LIKE '%" . $param . "%' Order By Categoria Desc, Nombre;";
+			$consulta = "Select Id,Nombre from ReqNFunc where Nombre LIKE '%" . $param . "%' Order By Categoria Desc, Nombre;";
 			$resultado = mysqli_query($conexion, $consulta);
 
 			if (!$resultado)

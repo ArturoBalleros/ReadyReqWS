@@ -1,14 +1,19 @@
 <?php
-function decrypt_android($sStr, $sKey)
+function encrypt($string)
 {
-  $decrypted = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $sKey, base64_decode($sStr), MCRYPT_MODE_ECB);
-  $dec_s = strlen($decrypted);
-  $padding = ord($decrypted[$dec_s - 1]);
-  $decrypted = substr($decrypted, 0, -$padding);
-  return $decrypted;
+  $claveEncriptada = "";
+  $cont = 0;
+  $valoresAleatorios = ['a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'h', 'H', 'j', 'J', 'k', 'K', 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'p', 'P', 'q', 'Q', 'r', 'R', 's', 'S', 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y', 'z', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']; 
+  for ($i = 0; $i < strlen($string); $i++) {
+    $claveEncriptada .= substr($string, $i, 1);
+    $cont++;
+    for ($j = 0; $j < $cont; $j++)
+        $claveEncriptada .= $valoresAleatorios[mt_rand(0, count($valoresAleatorios) - 1)];    
+  }
+  return $claveEncriptada;
 }
 
-function decrypt_mac($string)
+function decrypt($string)
 {
   $pass = "";
   for ($i = 0; $i <= strlen($string); $i++) {
@@ -18,24 +23,6 @@ function decrypt_mac($string)
   }
   return $pass;
 }
-
-//Encriptar dentro del propio php
-//https://www.lawebdelprogramador.com/codigo/PHP/5128-Encriptar-y-desencriptar-con-openssl.html
-function encrypt($string)
-{
-  $key = "readyreqreadyreq";
-  $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
-  $encrypted = openssl_encrypt($string, "aes-256-cbc", $key, 0, $iv);
-  return base64_encode($encrypted."::".$iv);
-}
-
-function decrypt($string)
-{
-  $key = "readyreqreadyreq";
-  list($encrypted_data, $iv) = explode('::', base64_decode($string), 2);
-  return openssl_decrypt($encrypted_data, 'aes-256-cbc', $key, 0, $iv);
-}
-
 
 function connect($hostname_localhost, $username_localhost, $password_localhost, $database_localhost, $port_localhost)
 {
@@ -98,7 +85,7 @@ function querySQL($id, $mode, $flagTab, $flagReq)
         return "Select Id,Nombre from Objetivos where Id not IN (select idSubobj from ObjSubobj where idObj = " . $id . ") and Id <> " . $id . " Order By Categoria Desc, Nombre;";
       }
     }
-    if ($mode == 3) { //actores
+    if ($mode == 3) { //Actores
       if ($flagTab == 1) { //autores
         return "Select Id,Nombre from Grupo where Id not IN (select IdAutor from ActAuto where idAct = " . $id . ") Order By Categoria Desc, Nombre;";
       }
@@ -116,7 +103,7 @@ function querySQL($id, $mode, $flagTab, $flagReq)
       if ($flagTab == 3) { //objetivos
         return "Select Id,Nombre from Objetivos where Id not IN (select idObj from ReqObj where idReq = " . $id . ") Order By Categoria Desc, Nombre;";
       }
-      if ($flagTab == 5) { //actores
+      if ($flagTab == 5) { //Actores
         return "Select Id,Nombre from Actores where Id not IN (select IdAct from ReqAct where idReq = " . $id . ") Order By Categoria Desc, Nombre;";
       }
     }

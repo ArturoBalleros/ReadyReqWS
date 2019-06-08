@@ -19,7 +19,7 @@ else {
 		echo makeError("No2");
 	else {
 
-		$consulta = "Select Id,Nombre from reqnfunc Order By Categoria Desc, Nombre;";
+		$consulta = "Select Id,Nombre from ReqNFunc Order By Categoria Desc, Nombre;";
 		$resultado = mysqli_query($conexion, $consulta);
 
 		if (!$resultado)

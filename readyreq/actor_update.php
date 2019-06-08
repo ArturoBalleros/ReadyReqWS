@@ -29,7 +29,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "update actores set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', complejidad = " . $comple . ", 
+			$consulta = "update Actores set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', complejidad = " . $comple . ", 
 			desccomple = '" . $descomp . "', categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);
 

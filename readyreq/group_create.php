@@ -25,7 +25,7 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into grupo (nombre,organizacion,rol,desarrollador,categoria,comentario) 
+			$consulta = "insert into Grupo (nombre,organizacion,rol,desarrollador,categoria,comentario) 
 		values ('" . $nombre . "','" . $organi . "','" . $rol . "'," . $desarr . "," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)

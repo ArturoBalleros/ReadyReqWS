@@ -9,13 +9,13 @@ if (!empty($_GET['a']) && !empty($_GET['b']) && !empty($_GET['c']) && !empty($_G
 	$database_localhost = $_GET['d'];
 	$port_localhost = $_GET['e'];
 
-	$conexion = connect($hostname_localhost, $username_localhost, decrypt_android($password_localhost, "readyreqreadyreq"), $database_localhost, $port_localhost);
+	$conexion = connect($hostname_localhost, $username_localhost, decrypt($password_localhost), $database_localhost, $port_localhost);
 
 	if ($conexion == "No")
 		echo makeError("No2");
 	else {
 		mysqli_close($conexion);
-		if (writeConf($hostname_localhost, $username_localhost, decrypt_android($password_localhost, "readyreqreadyreq"), $database_localhost, $port_localhost) == "No") {
+		if (writeConf($hostname_localhost, $username_localhost, decrypt($password_localhost), $database_localhost, $port_localhost) == "No") {
 			echo makeError("No3");
 			exit;
 		}

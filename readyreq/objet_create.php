@@ -27,7 +27,7 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into objetivos (nombre,descripcion,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
+			$consulta = "insert into Objetivos (nombre,descripcion,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
 		values ('" . $nombre . "','" . $descrip . "'," . $prior . "," . $urgen . "," . $estab . "," . $estad . "," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)

@@ -21,12 +21,12 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "update reqfun set Paquete = 0 where Paquete = " . $cod . ";";
+			$consulta = "update ReqFun set Paquete = 0 where Paquete = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)
 				echo makeError("No4");
 			else {
-				$consulta = "delete from paquetes where Id = " . $cod . ";";
+				$consulta = "delete from Paquetes where Id = " . $cod . ";";
 				$resultado = mysqli_query($conexion, $consulta);
 				if (!$resultado)
 					echo makeError("No4");

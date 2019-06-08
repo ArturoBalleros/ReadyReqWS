@@ -25,7 +25,7 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into actores (nombre,descripcion,complejidad,desccomple,categoria,comentario) 
+			$consulta = "insert into Actores (nombre,descripcion,complejidad,desccomple,categoria,comentario) 
 		values ('" . $nombre . "','" . $descrip . "'," . $comple . ",'" . $descomple . "'," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)

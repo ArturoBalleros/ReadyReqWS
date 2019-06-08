@@ -19,7 +19,7 @@ else {
 		echo makeError("No2");
 	else {
 
-		$consulta = "Select Id,Nombre from actores Order By Categoria Desc, Nombre;";
+		$consulta = "Select Id,Nombre from Actores Order By Categoria Desc, Nombre;";
 		$resultado = mysqli_query($conexion, $consulta);
 
 		if (!$resultado)

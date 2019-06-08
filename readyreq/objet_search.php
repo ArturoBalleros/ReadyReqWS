@@ -23,7 +23,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "Select * from objetivos where Id = '" . $param . "';";
+			$consulta = "Select * from Objetivos where Id = '" . $param . "';";
 			$resultado = mysqli_query($conexion, $consulta);
 
 			if (!$resultado)
@@ -50,7 +50,7 @@ else {
 						while ($registro = mysqli_fetch_array($resultado))
 							$json['Resul3'][] = $registro;
 
-						$consulta = "Select o.Id as Id, o.Nombre as Nombre from Objetivos o, Objsubobj os where o.Id = os.IdSubObj and os.IdObj = " . $param . " Order By Categoria Desc, Nombre;";
+						$consulta = "Select o.Id as Id, o.Nombre as Nombre from Objetivos o, ObjSubobj os where o.Id = os.IdSubObj and os.IdObj = " . $param . " Order By Categoria Desc, Nombre;";
 						$resultado = mysqli_query($conexion, $consulta);
 
 						if (!$resultado)

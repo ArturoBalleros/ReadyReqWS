@@ -19,7 +19,7 @@ else {
 		echo makeError("No2");
 	else {
 		//Estimaciones
-		$consulta = "Select * from estim;";
+		$consulta = "Select * from Estim;";
 		$resultado = mysqli_query($conexion, $consulta);
 		if (!$resultado)
 			echo makeError("No3");
@@ -29,7 +29,7 @@ else {
 		}
 
 		//UUCPSim
-		$consulta = "SELECT 'UUCPSim' as NomEst, count(*) as ValEst FROM reqfun where Complejidad = 1;";
+		$consulta = "SELECT 'UUCPSim' as NomEst, count(*) as ValEst FROM ReqFun where Complejidad = 1;";
 		$resultado = mysqli_query($conexion, $consulta);
 		if (!$resultado)
 			echo makeError("No3");
@@ -39,7 +39,7 @@ else {
 		}
 
 		//UUCPMed
-		$consulta = "SELECT 'UUCPMed' as NomEst, count(*) as ValEst FROM reqfun where Complejidad = 2;";
+		$consulta = "SELECT 'UUCPMed' as NomEst, count(*) as ValEst FROM ReqFun where Complejidad = 2;";
 		$resultado = mysqli_query($conexion, $consulta);
 		if (!$resultado)
 			echo makeError("No3");
@@ -49,7 +49,7 @@ else {
 		}
 
 		//UUCPMax
-		$consulta = "SELECT 'UUCPMax' as NomEst, count(*) as ValEst FROM reqfun where Complejidad = 3;";
+		$consulta = "SELECT 'UUCPMax' as NomEst, count(*) as ValEst FROM ReqFun where Complejidad = 3;";
 		$resultado = mysqli_query($conexion, $consulta);
 		if (!$resultado)
 			echo makeError("No3");
@@ -59,7 +59,7 @@ else {
 		}
 
 		//AWSim
-		$consulta = "SELECT 'AWSim' as NomEst, count(*) as ValEst FROM actores where Complejidad = 1;";
+		$consulta = "SELECT 'AWSim' as NomEst, count(*) as ValEst FROM Actores where Complejidad = 1;";
 		$resultado = mysqli_query($conexion, $consulta);
 		if (!$resultado)
 			echo makeError("No3");
@@ -69,7 +69,7 @@ else {
 		}
 
 		//AWMed
-		$consulta = "SELECT 'AWMed' as NomEst, count(*) as ValEst FROM actores where Complejidad = 2;";
+		$consulta = "SELECT 'AWMed' as NomEst, count(*) as ValEst FROM Actores where Complejidad = 2;";
 		$resultado = mysqli_query($conexion, $consulta);
 		if (!$resultado)
 			echo makeError("No3");
@@ -79,7 +79,7 @@ else {
 		}
 
 		//AWMax
-		$consulta = "SELECT 'AWMax' as NomEst, count(*) as ValEst FROM actores where Complejidad = 3;";
+		$consulta = "SELECT 'AWMax' as NomEst, count(*) as ValEst FROM Actores where Complejidad = 3;";
 		$resultado = mysqli_query($conexion, $consulta);
 		if (!$resultado)
 			echo makeError("No3");

@@ -39,7 +39,7 @@ else {
 						$resulta["Nombre"] = $registro[1];
 						$json['Resul'][] = $resulta;
 					}
-					$consulta = querySQL($id, $mode, $flagTab, 2); //reqinfo
+					$consulta = querySQL($id, $mode, $flagTab, 2); //ReqInfo
 					$resultado = mysqli_query($conexion, $consulta);
 
 					if (!$resultado)

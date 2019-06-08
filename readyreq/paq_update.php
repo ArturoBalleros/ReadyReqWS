@@ -24,7 +24,7 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "update paquetes set nombre = '" . $nombre . "', categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
+			$consulta = "update Paquetes set nombre = '" . $nombre . "', categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)
 				echo makeError("No4");

@@ -23,7 +23,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "Select * from paquetes where Id = '" . $param . "';";
+			$consulta = "Select * from Paquetes where Id = '" . $param . "';";
 			$resultado = mysqli_query($conexion, $consulta);
 
 			if (!$resultado)

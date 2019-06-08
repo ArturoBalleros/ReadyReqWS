@@ -31,7 +31,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "update reqnfunc set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', prioridad = " . $prior . ", urgencia = " . $urgen . ", 
+			$consulta = "update ReqNFunc set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', prioridad = " . $prior . ", urgencia = " . $urgen . ", 
 			estabilidad = " . $estab . ", estado = " . $estad . ", categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);
 

@@ -23,7 +23,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "Select Id from reqnfunc where Nombre = '" . $param . "' Order By id Desc;";
+			$consulta = "Select Id from ReqNFunc where Nombre = '" . $param . "' Order By id Desc;";
 			$resultado = mysqli_query($conexion, $consulta);
 
 			if (!$resultado)
