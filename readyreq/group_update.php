@@ -3,11 +3,13 @@ include("funciones.php");
 
 $cod = $_GET['a'];
 $nombre = $_GET['b'];
-$organi = $_GET['c'];
-$rol = $_GET['d'];
-$desarr = $_GET['e'];
-$categ = $_GET['f'];
-$comen = $_GET['g'];
+$version = $_GET['c'];
+$fecha = $_GET['d'];
+$organi = $_GET['e'];
+$rol = $_GET['f'];
+$desarr = $_GET['g'];
+$categ = $_GET['h'];
+$comen = $_GET['i'];
 $json = array();
 
 if (empty($cod))
@@ -23,14 +25,14 @@ else {
 		$database_localhost = $param_conn[3];
 		$port_localhost = intval($param_conn[4]);
 
-		$conexion = connect($hostname_localhost, $username_localhost, decrypt($password_localhost, "readyreqreadyreq"), $database_localhost, $port_localhost);
+		$conexion = connect($hostname_localhost, $username_localhost, decrypt($password_localhost), $database_localhost, $port_localhost);
 
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
 
-			$consulta = "update Grupo set nombre = '" . $nombre . "', organizacion = '" . $organi . "', rol = '" . $rol . "', 
-			desarrollador = " . $desarr . ", categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
+			$consulta = "update Grupo set nombre = '" . $nombre . "', version = '" . $version . "', fecha = '" . $fecha . "', organizacion = '" . $organi . "', 
+			rol = '" . $rol . "', desarrollador = " . $desarr . ", categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);
 
 			if (!$resultado)

@@ -2,11 +2,13 @@
 include("funciones.php");
 
 $nombre = $_GET['a'];
-$organi = $_GET['b'];
-$rol = $_GET['c'];
-$desarr = $_GET['d'];
-$categ = $_GET['e'];
-$comen = $_GET['f'];
+$version = $_GET['b'];
+$fecha = $_GET['c'];
+$organi = $_GET['d'];
+$rol = $_GET['e'];
+$desarr = $_GET['f'];
+$categ = $_GET['g'];
+$comen = $_GET['h'];
 
 if (empty($nombre))
 	echo makeError("No1");
@@ -21,12 +23,12 @@ else {
 		$database_localhost = $param_conn[3];
 		$port_localhost = intval($param_conn[4]);
 
-		$conexion = connect($hostname_localhost, $username_localhost, decrypt($password_localhost, "readyreqreadyreq"), $database_localhost, $port_localhost);
+		$conexion = connect($hostname_localhost, $username_localhost, decrypt($password_localhost), $database_localhost, $port_localhost);
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into Grupo (nombre,organizacion,rol,desarrollador,categoria,comentario) 
-		values ('" . $nombre . "','" . $organi . "','" . $rol . "'," . $desarr . "," . $categ . ",'" . $comen . "');";
+			$consulta = "insert into Grupo (nombre,version,fecha,organizacion,rol,desarrollador,categoria,comentario) 
+		values ('" . $nombre . "'," . $version . ",'" . $fecha . "','" . $organi . "','" . $rol . "'," . $desarr . "," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)
 				echo makeError("No4");

@@ -19,7 +19,7 @@ else {
 		$database_localhost = $param_conn[3];
 		$port_localhost = intval($param_conn[4]);
 
-		$conexion = connect($hostname_localhost, $username_localhost, decrypt($password_localhost, "readyreqreadyreq"), $database_localhost, $port_localhost);
+		$conexion = connect($hostname_localhost, $username_localhost, decrypt($password_localhost), $database_localhost, $port_localhost);
 
 		if ($conexion == "No")
 			echo makeError("No3");
