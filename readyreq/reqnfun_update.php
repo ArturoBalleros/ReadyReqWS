@@ -3,13 +3,15 @@ include("funciones.php");
 
 $cod = $_GET['a'];
 $nombre = $_GET['b'];
-$descrip = $_GET['c'];
-$prior = $_GET['d'];
-$urgen = $_GET['e'];
-$estab = $_GET['f'];
-$estad = $_GET['g'];
-$categ = $_GET['h'];
-$comen = $_GET['i'];
+$version = $_GET['c'];
+$fecha = $_GET['d'];
+$descrip = $_GET['e'];
+$prior = $_GET['f'];
+$urgen = $_GET['g'];
+$estab = $_GET['h'];
+$estad = $_GET['i'];
+$categ = $_GET['j'];
+$comen = $_GET['k'];
 $json = array();
 
 if (empty($cod))
@@ -31,7 +33,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "update ReqNFunc set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', prioridad = " . $prior . ", urgencia = " . $urgen . ", 
+			$consulta = "update ReqNFunc set nombre = '" . $nombre . "', version = '" . $version . "', fecha = '" . $fecha . "', descripcion = '" . $descrip . "', prioridad = " . $prior . ", urgencia = " . $urgen . ", 
 			estabilidad = " . $estab . ", estado = " . $estad . ", categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);
 

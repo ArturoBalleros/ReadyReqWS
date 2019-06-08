@@ -2,13 +2,15 @@
 include("funciones.php");
 
 $nombre = $_GET['a'];
-$descrip = $_GET['b'];
-$prior = $_GET['c'];
-$urgen = $_GET['d'];
-$estab = $_GET['e'];
-$estad = $_GET['f'];
-$categ = $_GET['g'];
-$comen = $_GET['h'];
+$version = $_GET['b'];
+$fecha = $_GET['c'];
+$descrip = $_GET['d'];
+$prior = $_GET['e'];
+$urgen = $_GET['f'];
+$estab = $_GET['g'];
+$estad = $_GET['h'];
+$categ = $_GET['i'];
+$comen = $_GET['j'];
 
 if (empty($nombre))
 	echo makeError("No1");
@@ -27,8 +29,8 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into ReqNFunc (nombre,descripcion,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
-		values ('" . $nombre . "','" . $descrip . "'," . $prior . "," . $urgen . "," . $estab . "," . $estad . "," . $categ . ",'" . $comen . "');";
+			$consulta = "insert into ReqNFunc (nombre,version,fecha,descripcion,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
+		values ('" . $nombre . "'," . $version . ",'" . $fecha . "','" . $descrip . "'," . $prior . "," . $urgen . "," . $estab . "," . $estad . "," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)
 				echo makeError("No4");

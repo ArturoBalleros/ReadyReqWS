@@ -3,11 +3,13 @@ include("funciones.php");
 
 $cod = $_GET['a'];
 $nombre = $_GET['b'];
-$descrip = $_GET['c'];
-$comple = $_GET['d'];
-$descomp = $_GET['e'];
-$categ = $_GET['f'];
-$comen = $_GET['g'];
+$version = $_GET['c'];
+$fecha = $_GET['d'];
+$descrip = $_GET['e'];
+$comple = $_GET['f'];
+$descomp = $_GET['g'];
+$categ = $_GET['h'];
+$comen = $_GET['i'];
 $json = array();
 
 if (empty($cod))
@@ -29,7 +31,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "update Actores set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', complejidad = " . $comple . ", 
+			$consulta = "update Actores set nombre = '" . $nombre . "', version = '" . $version . "', fecha = '" . $fecha . "', descripcion = '" . $descrip . "', complejidad = " . $comple . ", 
 			desccomple = '" . $descomp . "', categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);
 

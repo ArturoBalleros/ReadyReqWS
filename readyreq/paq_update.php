@@ -3,8 +3,10 @@ include("funciones.php");
 
 $cod = $_GET['a'];
 $nombre = $_GET['b'];
-$categ = $_GET['c'];
-$comen = $_GET['d'];
+$version = $_GET['c'];
+$fecha = $_GET['d'];
+$categ = $_GET['e'];
+$comen = $_GET['f'];
 $json = array();
 
 if (empty($cod))
@@ -24,7 +26,7 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "update Paquetes set nombre = '" . $nombre . "', categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
+			$consulta = "update Paquetes set nombre = '" . $nombre . "', version = '" . $version . "', fecha = '" . $fecha . "', categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)
 				echo makeError("No4");

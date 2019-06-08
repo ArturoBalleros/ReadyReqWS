@@ -2,11 +2,13 @@
 include("funciones.php");
 
 $nombre = $_GET['a'];
-$descrip = $_GET['b'];
-$comple = $_GET['c'];
-$descomple = $_GET['d'];
-$categ = $_GET['e'];
-$comen = $_GET['f'];
+$version = $_GET['b'];
+$fecha = $_GET['c'];
+$descrip = $_GET['d'];
+$comple = $_GET['e'];
+$descomple = $_GET['f'];
+$categ = $_GET['g'];
+$comen = $_GET['h'];
 
 if (empty($nombre))
 	echo makeError("No1");
@@ -25,8 +27,8 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into Actores (nombre,descripcion,complejidad,desccomple,categoria,comentario) 
-		values ('" . $nombre . "','" . $descrip . "'," . $comple . ",'" . $descomple . "'," . $categ . ",'" . $comen . "');";
+			$consulta = "insert into Actores (nombre,version,fecha,descripcion,complejidad,desccomple,categoria,comentario) 
+		values ('" . $nombre . "'," . $version . ",'" . $fecha . "','" . $descrip . "'," . $comple . ",'" . $descomple . "'," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)
 				echo makeError("No4");

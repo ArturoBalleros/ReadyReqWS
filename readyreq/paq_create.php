@@ -2,8 +2,10 @@
 include("funciones.php");
 
 $nombre = $_GET['a'];
-$categ = $_GET['b'];
-$comen = $_GET['c'];
+$version = $_GET['b'];
+$fecha = $_GET['c'];
+$categ = $_GET['d'];
+$comen = $_GET['e'];
 
 if (empty($nombre))
 	echo makeError("No1");
@@ -22,7 +24,7 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into Paquetes (nombre,categoria,comentario) values ('" . $nombre . "'," . $categ . ",'" . $comen . "');";
+			$consulta = "insert into Paquetes (nombre,version,fecha,categoria,comentario) values ('" . $nombre . "'," . $version . ",'" . $fecha . "'," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)
 				echo makeError("No4");

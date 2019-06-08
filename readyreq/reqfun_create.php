@@ -2,17 +2,19 @@
 include("funciones.php");
 
 $nombre = $_GET['a'];
-$descrip = $_GET['b'];
-$paquet = $_GET['c'];
-$precond = $_GET['d'];
-$postcond = $_GET['e'];
-$compl = $_GET['f'];
-$prior = $_GET['g'];
-$urgen = $_GET['h'];
-$estab = $_GET['i'];
-$estad = $_GET['j'];
-$categ = $_GET['k'];
-$comen = $_GET['l'];
+$version = $_GET['b'];
+$fecha = $_GET['c'];
+$descrip = $_GET['d'];
+$paquet = $_GET['e'];
+$precond = $_GET['f'];
+$postcond = $_GET['g'];
+$compl = $_GET['h'];
+$prior = $_GET['i'];
+$urgen = $_GET['j'];
+$estab = $_GET['k'];
+$estad = $_GET['l'];
+$categ = $_GET['m'];
+$comen = $_GET['n'];
 
 
 if (empty($nombre))
@@ -32,8 +34,9 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into ReqFun (nombre,descripcion,paquete,precond,postcond,complejidad,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
-			values ('" . $nombre . "','" . $descrip . "'," . $paquet . ",'" . $precond . "','" . $postcond . "'," . $compl . "," . $prior . "," . $urgen . "," . $estab . "," . $estad . "," . $categ . ",'" . $comen . "');";
+			$consulta = "insert into ReqFun (nombre,version,fecha,descripcion,paquete,precond,postcond,complejidad,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
+			values ('" . $nombre . "'," . $version . ",'" . $fecha . "','" . $descrip . "'," . $paquet . ",'" . $precond . "','" . $postcond . "'," . $compl . ",
+			" . $prior . "," . $urgen . "," . $estab . "," . $estad . "," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)
 				echo makeError("No4");

@@ -3,17 +3,19 @@ include("funciones.php");
 
 $cod = $_GET['a'];
 $nombre = $_GET['b'];
-$descrip = $_GET['c'];
-$paquet = $_GET['d'];
-$precond = $_GET['e'];
-$postcond = $_GET['f'];
-$compl = $_GET['g'];
-$prior = $_GET['h'];
-$urgen = $_GET['i'];
-$estab = $_GET['j'];
-$estad = $_GET['k'];
-$categ = $_GET['l'];
-$comen = $_GET['m'];
+$version = $_GET['c'];
+$fecha = $_GET['d'];
+$descrip = $_GET['e'];
+$paquet = $_GET['f'];
+$precond = $_GET['g'];
+$postcond = $_GET['h'];
+$compl = $_GET['i'];
+$prior = $_GET['j'];
+$urgen = $_GET['k'];
+$estab = $_GET['l'];
+$estad = $_GET['m'];
+$categ = $_GET['n'];
+$comen = $_GET['o'];
 $json = array();
 
 if (empty($cod))
@@ -35,7 +37,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "update ReqFun set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', paquete = " . $paquet . ", precond = '" . $precond . "', 
+			$consulta = "update ReqFun set nombre = '" . $nombre . "', version = '" . $version . "', fecha = '" . $fecha . "', descripcion = '" . $descrip . "', paquete = " . $paquet . ", precond = '" . $precond . "', 
 			postcond = '" . $postcond . "', complejidad = " . $compl . ", prioridad = " . $prior . ", urgencia = " . $urgen . ", estabilidad = " . $estab . ",
 			estado = " . $estad . ", categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);

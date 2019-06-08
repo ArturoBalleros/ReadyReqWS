@@ -21,7 +21,7 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "update ReqFun set Paquete = 0 where Paquete = " . $cod . ";";
+			$consulta = "update ReqFun set Paquete = 1 where Paquete = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)
 				echo makeError("No4");

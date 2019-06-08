@@ -2,17 +2,19 @@
 include("funciones.php");
 
 $nombre = $_GET['a'];
-$descrip = $_GET['b'];
-$timmed = $_GET['c'];
-$timmax = $_GET['d'];
-$ocumed = $_GET['e'];
-$ocumax = $_GET['f'];
-$prior = $_GET['g'];
-$urgen = $_GET['h'];
-$estab = $_GET['i'];
-$estad = $_GET['j'];
-$categ = $_GET['k'];
-$comen = $_GET['l'];
+$version = $_GET['b'];
+$fecha = $_GET['c'];
+$descrip = $_GET['d'];
+$timmed = $_GET['e'];
+$timmax = $_GET['f'];
+$ocumed = $_GET['g'];
+$ocumax = $_GET['h'];
+$prior = $_GET['i'];
+$urgen = $_GET['j'];
+$estab = $_GET['k'];
+$estad = $_GET['l'];
+$categ = $_GET['m'];
+$comen = $_GET['n'];
 
 if (empty($nombre))
 	echo makeError("No1");
@@ -31,8 +33,8 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into reqinfo (nombre,descripcion,tiemmed,tiemmax,ocumed,ocumax,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
-		values ('" . $nombre . "','" . $descrip . "'," . $timmed . "," . $timmax . "," . $ocumed . "," . $ocumax . ",
+			$consulta = "insert into reqinfo (nombre,version,fecha,descripcion,tiemmed,tiemmax,ocumed,ocumax,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
+		values ('" . $nombre . "'," . $version . ",'" . $fecha . "','" . $descrip . "'," . $timmed . "," . $timmax . "," . $ocumed . "," . $ocumax . ",
 		" . $prior . "," . $urgen . "," . $estab . "," . $estad . "," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
 			if (!$resultado)

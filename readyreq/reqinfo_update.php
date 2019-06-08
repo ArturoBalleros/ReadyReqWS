@@ -3,17 +3,19 @@ include("funciones.php");
 
 $cod = $_GET['a'];
 $nombre = $_GET['b'];
-$descrip = $_GET['c'];
-$timmed = $_GET['d'];
-$timmax = $_GET['e'];
-$ocumed = $_GET['f'];
-$ocumax = $_GET['g'];
-$prior = $_GET['h'];
-$urgen = $_GET['i'];
-$estab = $_GET['j'];
-$estad = $_GET['k'];
-$categ = $_GET['l'];
-$comen = $_GET['m'];
+$version = $_GET['c'];
+$fecha = $_GET['d'];
+$descrip = $_GET['e'];
+$timmed = $_GET['f'];
+$timmax = $_GET['g'];
+$ocumed = $_GET['h'];
+$ocumax = $_GET['i'];
+$prior = $_GET['j'];
+$urgen = $_GET['k'];
+$estab = $_GET['l'];
+$estad = $_GET['m'];
+$categ = $_GET['n'];
+$comen = $_GET['o'];
 $json = array();
 
 if (empty($cod))
@@ -35,7 +37,7 @@ else {
 			echo makeError("No3");
 		else {
 
-			$consulta = "update ReqInfo set nombre = '" . $nombre . "', descripcion = '" . $descrip . "', tiemmed = " . $timmed . ", tiemmax = " . $timmax . ", 
+			$consulta = "update ReqInfo set nombre = '" . $nombre . "', version = '" . $version . "', fecha = '" . $fecha . "', descripcion = '" . $descrip . "', tiemmed = " . $timmed . ", tiemmax = " . $timmax . ", 
 			ocumed = " . $ocumed . ", ocumax = " . $ocumax . ", prioridad = " . $prior . ", urgencia = " . $urgen . ", estabilidad = " . $estab . ",
 			estado = " . $estad . ", categoria = " . $categ . ", comentario = '" . $comen . "' where Id = " . $cod . ";";
 			$resultado = mysqli_query($conexion, $consulta);
