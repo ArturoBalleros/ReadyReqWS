@@ -54,14 +54,17 @@ function writeConf($hostname_localhost, $username_localhost, $password_localhost
 
 function readConf()
 {
-  $nombre_archivo = "param_conn";
-  if (file_exists($nombre_archivo)) {
-    $contentFile = file_get_contents($nombre_archivo);
-    $contentArray = spliti("\n", $contentFile, 5);
-    return $contentArray;
-  } else {
-    return "No";
-  }
+    $file = fopen("param_conn", "r"); 
+    $contentFile = array();
+    $cont = 0;
+    while(!feof($file))
+    {
+        array_push($contentFile, fgets($file));
+        $contentFile[$cont] = substr($contentFile[$cont], 0, strlen($contentFile[$cont])-1);
+        $cont++;
+    }
+    fclose($file);
+    return $contentFile;
 }
 
 function makeError($numError)
