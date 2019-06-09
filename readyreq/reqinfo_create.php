@@ -33,7 +33,7 @@ else {
 		if ($conexion == "No")
 			echo makeError("No3");
 		else {
-			$consulta = "insert into reqinfo (nombre,version,fecha,descripcion,tiemmed,tiemmax,ocumed,ocumax,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
+			$consulta = "insert into ReqInfo (nombre,version,fecha,descripcion,tiemmed,tiemmax,ocumed,ocumax,prioridad,urgencia,estabilidad,estado,categoria,comentario) 
 		values ('" . $nombre . "'," . $version . ",'" . $fecha . "','" . $descrip . "'," . $timmed . "," . $timmax . "," . $ocumed . "," . $ocumax . ",
 		" . $prior . "," . $urgen . "," . $estab . "," . $estad . "," . $categ . ",'" . $comen . "');";
 			$resultado = mysqli_query($conexion, $consulta);
