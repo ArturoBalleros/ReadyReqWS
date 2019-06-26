@@ -1,4 +1,7 @@
 <?php
+/*
+ * Autor: Arturo Balleros Albillo
+ */
 include("funciones.php");
 
 if (!empty($_GET['a']) && !empty($_GET['b']) && !empty($_GET['c']) && !empty($_GET['d']) && !empty($_GET['e'])) {

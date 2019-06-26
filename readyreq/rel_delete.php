@@ -1,4 +1,7 @@
 <?php
+/*
+ * Autor: Arturo Balleros Albillo
+ */
 include("funciones.php");
 
 $sente = $_GET['a'];

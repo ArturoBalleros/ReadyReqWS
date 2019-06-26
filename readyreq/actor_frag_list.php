@@ -1,4 +1,7 @@
 <?php
+/*
+ * Autor: Arturo Balleros Albillo
+ */
 include("funciones.php");
 
 $param_conn = readConf();

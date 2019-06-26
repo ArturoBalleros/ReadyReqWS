@@ -1,4 +1,7 @@
 <?php
+/*
+ * Autor: Arturo Balleros Albillo
+ */
 function encrypt($string)
 {
   $claveEncriptada = "";
